@@ -33,7 +33,7 @@ Microchip uses a C compiler called [XC32](https://www.microchip.com/mplab/compil
 
 ## Development Process
 
-While you are working through the task, you will be expected to follow our development process. This means following Gitflow and Barr Group Standards. All development should  be preformed on a new feature branch based off the *develop* branch. Commits should be made regularly and frequently with the emphasis being on smaller commits. Make sure to push frequently as well, to ensure no loss of work.
+While you are working through the task, you will be expected to follow our development process. This means following Gitflow and Barr Group Standards. All development should  be preformed on a new feature branch based off the *develop* branch. Commits should be made regularly and frequently with the emphasis being on smaller scope commits, these are called [atomic commits](https://www.freshconsulting.com/atomic-commits/). Make sure to push frequently as well, to ensure no loss of work.
 
 ### General Code Principles to live by:
 * **One function with one function** - functions should do what the name suggests and nothing more
