@@ -131,6 +131,42 @@
         hash_array[hash_index] = item;
     }
 
+    /** delete a data item in the hash table **/
+    struct
+    data_item_t *delete_data_item(struct data_item_t* item, struct data_item_t *hash_array[TABLE_SIZE])
+    {
+        struct data_item_t *dummy_item = (struct data_item_t*) malloc(sizeof(struct data_item_t));
+        strcpy(dummyItem->code,"");  
+        dummyItem->key = -1; 
+
+        
+        int key = item->key;
+
+        //get the hash 
+        int hash_index = get_hash_code(key);
+
+        //move in array until an empty
+        while(hash_array[hash_index] != NULL)
+        {
+	
+            if(hash_array[hash_index]->key == key)
+            {
+                struct data_item_t* temp = hash_array[hash_index]; 
+			
+                //assign a dummy item at deleted position
+                hash_array[hash_index] = dummyItem; 
+                return temp;
+            }
+		
+            //go to next cell
+            ++hash_index;
+		
+      //wrap around the table
+            hash_index %= TABLE_SIZE;
+        }      
+	
+        return NULL;
+    }
 
 /* *****************************************************************************
  End of File
