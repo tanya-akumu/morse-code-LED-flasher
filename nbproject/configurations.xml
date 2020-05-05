@@ -17,6 +17,8 @@
       <logicalFolder name="f1" displayName="tests" projectFiles="true">
       </logicalFolder>
       <itemPath>src/main.c</itemPath>
+      <itemPath>src/morse_code.c</itemPath>
+      <itemPath>src/morse_code.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
