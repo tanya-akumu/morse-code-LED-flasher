@@ -133,26 +133,26 @@
     
     /** hashing function for indexing **/
     int
-    hash_code(int key);
+    get_hash_code(int key);
     
     /** search a data item in the hash table **/
     struct 
-    data_item_t *search(int key, struct data_item_t *hashArray[TABLE_SIZE]);
+    data_item_t *search(int key, struct data_item_t *hash_array[TABLE_SIZE]);
     
     /** insert a data item in the hash table **/
     void 
-    insert(int key,int data, struct data_item_t *hashArray[TABLE_SIZE]);
+    insert(int key,int data, struct data_item_t *hash_array[TABLE_SIZE]);
     
     /** delete a data item in the hash table **/
     struct
-    data_item_t *delete_data_item(struct data_item_t* item, struct data_item_t *hashArray[TABLE_SIZE]);
+    data_item_t *delete_data_item(struct data_item_t* item, struct data_item_t *hash_array[TABLE_SIZE]);
     
     
 
 
 
 
-#endif /* _EXAMPLE_FILE_NAME_H */
+//#endif /* _EXAMPLE_FILE_NAME_H */
 
 /* *****************************************************************************
  End of File
