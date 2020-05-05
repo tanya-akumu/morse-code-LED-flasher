@@ -31,9 +31,9 @@
       @Description
         This constant represents the array size for the hash table. It will store
         the key value pairs for alphanumeric characters and punctuation marks 
-        which are 67 in total.
+        which are 50 in total as per the ITU standard.
      */
-#define TABLE_SIZE 67
+#define TABLE_SIZE 50
 
     // *****************************************************************************
     // *****************************************************************************
