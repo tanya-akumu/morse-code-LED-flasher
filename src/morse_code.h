@@ -134,7 +134,9 @@ convert_to_upper_case (char str[]);
 void
 setup_morse_code_table();
 
-
+/** This function generates the morse code for the parsed in string **/
+char
+*encode(char str [], char code[]);
 
 
 /* *****************************************************************************

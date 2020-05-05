@@ -180,7 +180,23 @@ setup_morse_code_table()
     insert((int) '\'', ".????.", hash_array);
     insert((int) '=', "?...?", hash_array);
     insert((int) ' ', " ", hash_array);
+}
+
+/** This function generates the morse code for the parsed in string **/
+char
+*encode(char str [], char code[])
+{
     
+    int counter;
+    int key;
+     
+    for(counter = 0; str[counter] != '\0'; counter++)
+    {
+        key = (int)str[counter];
+        code[counter] = *(search(key, hash_array)->code);
+    }
+     
+    return code;
 }
 
 /* *****************************************************************************
