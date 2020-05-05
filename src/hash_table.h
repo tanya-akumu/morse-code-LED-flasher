@@ -16,50 +16,24 @@
  */
 /* ************************************************************************** */
 
-/* ************************************************************************** */
-/* ************************************************************************** */
-/* Section: Included Files                                                    */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
-/* This section lists the other files that are included in this file.
- */
-
-/* TODO:  Include other files here if needed. */
-
-
-
-
     /* ************************************************************************** */
     /* ************************************************************************** */
     /* Section: Constants                                                         */
     /* ************************************************************************** */
     /* ************************************************************************** */
 
-    /*  A brief description of a section can be given directly below the section
-        banner.
-     */
-
-
     /* ************************************************************************** */
-    /** Descriptive Constant Name
+    /** Table_size
 
       @Summary
-        Brief one-line summary of the constant.
+        Number of key-value pairs in the hash table.
     
       @Description
-        Full description, explaining the purpose and usage of the constant.
-        <p>
-        Additional description in consecutive paragraphs separated by HTML 
-        paragraph breaks, as necessary.
-        <p>
-        Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
-    
-      @Remarks
-        Any additional remarks
+        This constant represents the array size for the hash table. It will store
+        the key value pairs for alphanumeric characters and punctuation marks 
+        which are 67 in total.
      */
-#define EXAMPLE_CONSTANT 0
-
+#define TABLE_SIZE 67
 
     // *****************************************************************************
     // *****************************************************************************
@@ -71,37 +45,36 @@
         banner.
      */
 
-
     // *****************************************************************************
 
-    /** Descriptive Data Type Name
+    /** Data item
 
       @Summary
-        Brief one-line summary of the data type.
+        Define data item that has an integer as key and string as the value.
     
       @Description
-        Full description, explaining the purpose and usage of the data type.
-        <p>
-        Additional description in consecutive paragraphs separated by HTML 
-        paragraph breaks, as necessary.
-        <p>
-        Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
-
-      @Remarks
-        Any additional remarks
-        <p>
-        Describe enumeration elements and structure and union members above each 
-        element or member.
+        This data item defines the struct to be stored in the hash table. It
+        includes an integer as the key and a string as the value. 
      */
-    typedef struct _example_struct_t {
-        /* Describe structure member. */
-        int some_number;
+    typedef struct data_item_t {
+        /* Integer of English char as key. */
+        int key;
 
-        /* Describe structure member. */
-        bool some_flag;
+        /* Morse code of english character as an array. */
+        char code [8];
 
-    } example_struct_t;
-
+    } data_item_t;
+    
+    /** This represents the array storing the key-value pairs of a data item **/
+   // struct data_item_t *hashArray[TABLE_SIZE]; 
+    
+    /** This represents a key-value pair to represent a dummy data item in a
+     hash table **/
+    struct data_item_t *dummyItem;
+    
+    /** This represents a key-value pair to represent an actual data item in a
+     hash table **/
+    struct data_item_t *item;
 
     // *****************************************************************************
     // *****************************************************************************
@@ -157,7 +130,24 @@
             return 3;
         }
      */
-    int ExampleFunction(int param1, int param2);
+    
+    /** hashing function for indexing **/
+    int
+    hashcode(int key);
+    
+    /** search a data item in the hash table **/
+    struct 
+    data_item_t *search(int key, struct data_item_t *hashArray[TABLE_SIZE]);
+    
+    /** insert a data item in the hash table **/
+    void 
+    insert(int key,int data, struct data_item_t *hashArray[TABLE_SIZE]);
+    
+    /** delete a data item in the hash table **/
+    struct
+    data_item_t *delete_data_item(struct data_item_t* item, struct data_item_t *hashArray[TABLE_SIZE]);
+    
+    
 
 
 
