@@ -75,11 +75,37 @@
 
 /** hashing function to return index for specific key **/
     int
-    hashcode(int key)
+    hash_code(int key)
     {
         return key % TABLE_SIZE;
     }
 
+     /** search a data item in the hash table **/
+    struct 
+    data_item_t *search(int key, struct data_item_t *hash_array[TABLE_SIZE])
+    {
+        //get the hash 
+        int hash_index = hash_code(key);  
+	
+        //move in array until an empty 
+        while(hash_array[hash_index] != NULL)
+        {
+	
+        if(hash_array[hash_index]->key == key)
+        {
+           return hash_array[hash_index]; 
+        }
+          
+			
+        //go to next cell
+        ++hash_index;
+		
+        //wrap around the table
+        hash_index %= TABLE_SIZE;
+        }        
+	
+        return NULL;   
+    }
 
 
 /* *****************************************************************************
