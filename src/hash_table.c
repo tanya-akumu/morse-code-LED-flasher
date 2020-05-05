@@ -73,7 +73,12 @@
     banner.
  */
 
-
+/** hashing function to return index for specific key **/
+    int
+    hashcode(int key)
+    {
+        return key % TABLE_SIZE;
+    }
 
 
 
