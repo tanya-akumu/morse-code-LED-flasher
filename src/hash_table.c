@@ -139,7 +139,6 @@
         strcpy(dummyItem->code,"");  
         dummyItem->key = -1; 
 
-        
         int key = item->key;
 
         //get the hash 
