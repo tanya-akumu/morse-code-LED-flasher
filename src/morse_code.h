@@ -125,7 +125,10 @@
             return 3;
         }
      */
-    
+
+/** This function converts the passed in string to upper case*/
+void
+convert_to_upper_case (char str[]);
 
 
 

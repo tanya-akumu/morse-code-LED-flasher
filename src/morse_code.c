@@ -21,6 +21,7 @@
 /* Section: Included Files                                                    */
 /* ************************************************************************** */
 #include "morse_code.h"
+#include "hash_table.h"
 
 /* ************************************************************************** */
 /* ************************************************************************** */
@@ -111,7 +112,17 @@
   @Remarks
     Refer to the example_file.h interface header for function usage details.
  */
-
+/** This function converts the passed in string to upper case*/
+void
+convert_to_upper_case (char str[])
+{
+    int counter;
+    
+    for (counter = 0; str[counter] != '\0'; counter++)
+    {
+        str[counter] = toupper(str[counter]);
+    }
+}
 
 
 /* *****************************************************************************
