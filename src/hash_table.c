@@ -109,7 +109,7 @@
     
     /** insert a data item in the hash table **/
     void 
-    insert_item(int key, char data[], struct data_item_t *hash_array[TABLE_SIZE])
+    insert(int key, char data[8], struct data_item_t *hash_array[TABLE_SIZE])
     {
         struct data_item_t *item = (struct data_item_t*) malloc(sizeof(struct data_item_t));
         strcpy(item->code,data);  
