@@ -141,7 +141,7 @@
     
     /** insert a data item in the hash table **/
     void 
-    insert_item(int key,char data[], struct data_item_t *hash_array[TABLE_SIZE]);
+    insert(int key,char data[], struct data_item_t *hash_array[TABLE_SIZE]);
     
     /** delete a data item in the hash table **/
     struct
