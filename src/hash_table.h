@@ -133,7 +133,7 @@
     
     /** hashing function for indexing **/
     int
-    hashcode(int key);
+    hash_code(int key);
     
     /** search a data item in the hash table **/
     struct 
