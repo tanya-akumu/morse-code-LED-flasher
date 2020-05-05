@@ -19,6 +19,8 @@
       <itemPath>src/main.c</itemPath>
       <itemPath>src/morse_code.c</itemPath>
       <itemPath>src/morse_code.h</itemPath>
+      <itemPath>src/hash_table.c</itemPath>
+      <itemPath>src/hash_table.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
