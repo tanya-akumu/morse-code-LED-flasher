@@ -41,6 +41,12 @@
 
  */
 
+/** include files **/
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include "hash_table.h"
 
 /* ************************************************************************** */
 /* ************************************************************************** */
@@ -66,6 +72,8 @@
 /*  A brief description of a section can be given directly below the section
     banner.
  */
+
+
 
 
 
