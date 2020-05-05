@@ -61,7 +61,7 @@
         int key;
 
         /* Morse code of english character as an array. */
-        char code [8];
+        char code [7];
 
     } data_item_t;
     
