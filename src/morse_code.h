@@ -130,6 +130,9 @@
 void
 convert_to_upper_case (char str[]);
 
+/** This function sets up the morse code look up table **/
+void
+setup_morse_code_table();
 
 
 
