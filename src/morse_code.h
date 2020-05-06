@@ -135,8 +135,8 @@ void
 setup_morse_code_table();
 
 /** This function generates the morse code for the parsed in string **/
-char
-*encode(char str [], char code[]);
+void
+encode(char str [], char code[][8]);
 
 
 /* *****************************************************************************

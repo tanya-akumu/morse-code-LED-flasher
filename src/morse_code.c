@@ -183,20 +183,24 @@ setup_morse_code_table()
 }
 
 /** This function generates the morse code for the parsed in string **/
-char
-*encode(char str [], char code[])
+void
+encode(char str [], char code[][8])
 {
     
     int counter;
+    char temp[8];
+    struct data_item_t* temp_t;
     int key;
+
+    setup_morse_code_table();
      
     for(counter = 0; str[counter] != '\0'; counter++)
     {
         key = (int)str[counter];
-        code[counter] = *(search(key, hash_array)->code);
+        temp_t = search(key, hash_array);
+        strcpy(temp,(temp_t->code));
+        strcpy(code[counter], temp);
     }
-     
-    return code;
 }
 
 /* *****************************************************************************
