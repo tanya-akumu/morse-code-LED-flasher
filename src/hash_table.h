@@ -111,7 +111,32 @@
     int
     get_hash_code(int key);
     
-    /** search a data item in the hash table **/
+ 
+    // *****************************************************************************
+    /**
+      @Function
+        int get_hash_code(int key); 
+
+      @Summary
+        search a data item in the hash table.
+
+      @Description
+        This function searches for a data item in the hash table using its key. 
+        The function uses the key to get the hash index. This index is used to 
+        traverse the table until the key is found. If the key is found, it returns 
+        the data item at that index. Otherwise it returns NULL.
+
+      @Precondition
+        The hash table should have data items to search through
+
+      @Parameters
+        @param key: This represents the key member of the data item to search for.
+     
+        @param hash table: This is an array of data_item_t structs.
+
+    @Returns
+        data_item_t 
+     */
     struct 
     data_item_t *search(int key, struct data_item_t *hash_array[TABLE_SIZE]);
     
