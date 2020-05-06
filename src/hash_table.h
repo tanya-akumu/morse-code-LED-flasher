@@ -169,22 +169,38 @@
                of data_item_t struct.
 
     @Returns
-        data_item_t 
+        void
      */
     void 
     insert(int key,char data[], struct data_item_t *hash_array[TABLE_SIZE]);
     
-    
-    /** delete a data item in the hash table **/
+    // *****************************************************************************
+    /**
+      @Function
+        struct
+        data_item_t *delete_data_item(struct data_item_t* item, struct data_item_t *hash_array[TABLE_SIZE]);
+
+      @Summary
+        delete a data item in the hash table. 
+
+      @Description
+        This function deletes a data_item_t struct from the hash table. It gets
+        the hash index from the key member of the struct and uses it to remove the 
+        data_item_t from the table. If the key is not present, it returns null
+
+      @Precondition
+        None
+
+      @Parameters
+        @param hash table: This is an array of data_item_t structs.
+     
+        @param data_item_t: data_item to be deleted from the hash table.
+
+    @Returns
+        data_item_t 
+     */
     struct
     data_item_t *delete_data_item(struct data_item_t* item, struct data_item_t *hash_array[TABLE_SIZE]);
-    
-    
-
-
-
-
-//#endif /* _EXAMPLE_FILE_NAME_H */
 
 /* *****************************************************************************
  End of File
