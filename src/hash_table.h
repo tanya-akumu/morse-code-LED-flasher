@@ -60,13 +60,11 @@
         /* Integer of English char as key. */
         int key;
 
-        /* Morse code of english character as an array. */
+        /* Morse code of english character as a string. */
         char code [7];
 
     } data_item_t;
     
-    /** This represents the array storing the key-value pairs of a data item **/
-   // struct data_item_t *hashArray[TABLE_SIZE]; 
     
     /** This represents a key-value pair to represent a dummy data item in a
      hash table **/
@@ -89,49 +87,27 @@
     // *****************************************************************************
     /**
       @Function
-        int ExampleFunctionName ( int param1, int param2 ) 
+        int get_hash_code(int key); 
 
       @Summary
-        Brief one-line description of the function.
+        hashing function for indexing in hash table.
 
       @Description
-        Full description, explaining the purpose and usage of the function.
-        <p>
-        Additional description in consecutive paragraphs separated by HTML 
-        paragraph breaks, as necessary.
-        <p>
-        Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
+        This function calculates the index of an item in a hash table ADT based 
+        on the key and the size of the table. The index is the remainder of the 
+        key divided by the table size.
 
       @Precondition
-        List and describe any required preconditions. If there are no preconditions,
-        enter "None."
+        None
 
       @Parameters
-        @param param1 Describe the first parameter to the function.
-    
-        @param param2 Describe the second parameter to the function.
+        @param key This represents the key member of the data item struct that is
+                   unique to a value.
 
-      @Returns
-        List (if feasible) and describe the return values of the function.
-        <ul>
-          <li>1   Indicates an error occurred
-          <li>0   Indicates an error did not occur
-        </ul>
-
-      @Remarks
-        Describe any special behavior not described above.
-        <p>
-        Any additional remarks.
-
-      @Example
-        @code
-        if(ExampleFunctionName(1, 2) == 0)
-        {
-            return 3;
-        }
+    @Returns
+        Integer 
      */
     
-    /** hashing function for indexing **/
     int
     get_hash_code(int key);
     
