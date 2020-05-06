@@ -20,6 +20,9 @@
 /* ************************************************************************** */
 /* Section: Included Files                                                    */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 #include "morse_code.h"
 #include "hash_table.h"
 
@@ -184,11 +187,11 @@ setup_morse_code_table()
 
 /** This function generates the morse code for the parsed in string **/
 void
-encode(char str [], char code[][8])
+encode(char str [], char code[][STRING_SIZE])
 {
     
     int counter;
-    char temp[8];
+    char temp[STRING_SIZE];
     struct data_item_t* temp_t;
     int key;
 

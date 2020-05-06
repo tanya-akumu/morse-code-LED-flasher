@@ -1,9 +1,6 @@
 /* ************************************************************************** */
 /** Morse code generator module
 
-  @Company
-    Plentify
-
   @File Name
     morse_code.h
 
@@ -19,17 +16,9 @@
  
  */
 
-/* ************************************************************************** */
-/* Section: Included Files                                                    */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
+#define STRING_SIZE 8
 /* This section lists the other files that are included in this file.
  */
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-
 
     /* ************************************************************************** */
     /* ************************************************************************** */
@@ -99,16 +88,40 @@
     @Returns
        None
      */
-void
-convert_to_upper_case (char str[]);
+    void
+    convert_to_upper_case (char str[]);
 
-/** This function sets up the morse code look up table **/
-void
-setup_morse_code_table();
+// *****************************************************************************
+    /**
+      @Function
+        void
+        setup_morse_code_table();
+     * 
+      @Summary
+        This function sets up the morse code look up table. 
+
+      @Description
+        This function uses the insert() function of the hash table to insert the
+        key value pairs of the english characters and equivalent morse code. The
+        key is the english character cast to int and the value is the morse code
+        in string format.  
+
+      @Precondition
+        None
+
+      @Parameters
+     None
+
+    @Returns
+       None
+     */
+
+    void
+    setup_morse_code_table();
 
 /** This function generates the morse code for the parsed in string **/
-void
-encode(char str [], char code[][8]);
+    void
+    encode(char str [], char code[][STRING_SIZE]);
 
 
 /* *****************************************************************************
