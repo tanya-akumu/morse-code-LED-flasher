@@ -77,56 +77,28 @@
     // *****************************************************************************
     // *****************************************************************************
 
-    /*  A brief description of a section can be given directly below the section
-        banner.
-     */
-
-    // *****************************************************************************
+// *****************************************************************************
     /**
       @Function
-        int ExampleFunctionName ( int param1, int param2 ) 
-
+        void
+        convert_to_upper_case (char str[]);
       @Summary
-        Brief one-line description of the function.
+        converts the passed in string to upper case. 
 
       @Description
-        Full description, explaining the purpose and usage of the function.
-        <p>
-        Additional description in consecutive paragraphs separated by HTML 
-        paragraph breaks, as necessary.
-        <p>
-        Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
+        This function converts the passed in string to its upper case form. It 
+        loops through the length of the string and converts each character to its 
+        upper case form.  
 
       @Precondition
-        List and describe any required preconditions. If there are no preconditions,
-        enter "None."
+        None
 
       @Parameters
-        @param param1 Describe the first parameter to the function.
-    
-        @param param2 Describe the second parameter to the function.
+        @param char str[] : String to be converted to upper case.
 
-      @Returns
-        List (if feasible) and describe the return values of the function.
-        <ul>
-          <li>1   Indicates an error occurred
-          <li>0   Indicates an error did not occur
-        </ul>
-
-      @Remarks
-        Describe any special behavior not described above.
-        <p>
-        Any additional remarks.
-
-      @Example
-        @code
-        if(ExampleFunctionName(1, 2) == 0)
-        {
-            return 3;
-        }
+    @Returns
+       None
      */
-
-/** This function converts the passed in string to upper case*/
 void
 convert_to_upper_case (char str[]);
 
