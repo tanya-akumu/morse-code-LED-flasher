@@ -69,7 +69,7 @@
     
     /** insert a data item in the hash table **/
     void 
-    insert(int key, char data[8], struct data_item_t *hash_array[TABLE_SIZE])
+    insert(int key, char data[STRING_SIZE], struct data_item_t *hash_array[TABLE_SIZE])
     {
         struct data_item_t *item;
         strcpy(item->code,data);  

@@ -34,6 +34,7 @@
         which are 50 in total as per the ITU standard.
      */
 #define TABLE_SIZE 50
+#define STRING_SIZE 8
 
     // *****************************************************************************
     // *****************************************************************************
@@ -61,7 +62,7 @@
         int key;
 
         /* Morse code of english character as a string. */
-        char code [7];
+        char code [STRING_SIZE];
 
     } data_item_t;
     
@@ -115,7 +116,8 @@
     // *****************************************************************************
     /**
       @Function
-        int get_hash_code(int key); 
+        struct 
+        data_item_t *search(int key, struct data_item_t *hash_array[TABLE_SIZE]); 
 
       @Summary
         search a data item in the hash table.
@@ -140,9 +142,38 @@
     struct 
     data_item_t *search(int key, struct data_item_t *hash_array[TABLE_SIZE]);
     
-    /** insert a data item in the hash table **/
+    // *****************************************************************************
+    /**
+      @Function
+        void 
+        insert(int key,char data[], struct data_item_t *hash_array[TABLE_SIZE]);
+
+      @Summary
+        insert a data item in the hash table. 
+
+      @Description
+        This function inserts a data_item_t struct into the hash table. The 
+        function creates a data_item_t struct using the passed in data members.
+        It then gets the hash index from the key and uses it to insert the 
+        data_item_t into an empty cell or a all with dummy data (with value of -1).
+
+      @Precondition
+        None
+
+      @Parameters
+        @param key: This represents the key member of the data item to search for.
+     
+        @param hash table: This is an array of data_item_t structs.
+     
+        @param data: This is an array of string to be set as data member
+               of data_item_t struct.
+
+    @Returns
+        data_item_t 
+     */
     void 
     insert(int key,char data[], struct data_item_t *hash_array[TABLE_SIZE]);
+    
     
     /** delete a data item in the hash table **/
     struct
