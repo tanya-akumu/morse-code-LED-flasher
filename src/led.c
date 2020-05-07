@@ -91,7 +91,7 @@ delay_ms (unsigned int ms)
 
 /** 
   @Function
-    void delay (int count) 
+    void delay (int count);
 
   @Summary
     Delay in by the passed in counter.
@@ -102,6 +102,102 @@ delay_ms (unsigned int ms)
 void delay (int time)
 {
     while(time > 0) {time --;}
+}
+
+
+/** 
+  @Function
+    show_signal_space(); 
+
+  @Summary
+    Flash LED to show space after morse code signal.
+
+  @Remarks
+    Refer to the led.h interface header for function usage details.
+ */
+void 
+show_signal_space()
+{
+    int space_length = dot_length;
+    LED_PIN = OFF;
+    delay_ms(space_length);
+}
+
+
+/** 
+  @Function
+    show_letter_space(); 
+
+  @Summary
+    Flash LED to show space after english character.
+
+  @Remarks
+    Refer to the led.h interface header for function usage details.
+ */
+void 
+show_letter_space()
+{
+    int letter_space_length = dot_length * 3;
+    LED_PIN = OFF;
+    delay_ms(letter_space_length);
+}
+
+
+/** 
+  @Function
+    show_word_space(); 
+
+  @Summary
+    Flash LED to show space after english word.
+
+  @Remarks
+    Refer to the led.h interface header for function usage details.
+ */
+void 
+show_word_space()
+{
+    int word_space_length = dot_length * 7;
+    LED_PIN = OFF;
+    delay_ms(word_space_length);
+}
+
+
+/** 
+  @Function
+    void show_dash(); 
+
+  @Summary
+    Flash LED to show dash morse code signal.
+
+  @Remarks
+    Refer to the led.h interface header for function usage details.
+ */
+void 
+show_dash()
+{
+    int dash_length = dot_length * 3;
+    
+    LED_PIN = ON;
+    delay_ms(dash_length);
+    show_signal_space();
+}
+
+/** 
+  @Function
+    void show_dot(); 
+
+  @Summary
+    Flash LED to show dot morse code signal.
+
+  @Remarks
+    Refer to the led.h interface header for function usage details.
+ */
+void 
+show_dot()
+{
+    LED_PIN = ON;
+    delay_ms(dot_length);
+    show_signal_space();
 }
 
 
