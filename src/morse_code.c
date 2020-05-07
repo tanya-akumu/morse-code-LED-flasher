@@ -37,61 +37,6 @@
     the character and the value is the code.
  */
 static struct data_item_t *hash_array[TABLE_SIZE];
-/* ************************************************************************** */
-/* ************************************************************************** */
-// Section: Local Functions                                                   */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
-/*  A brief description of a section can be given directly below the section
-    banner.
- */
-
-/* ************************************************************************** */
-
-/** 
-  @Function
-    int ExampleLocalFunctionName ( int param1, int param2 ) 
-
-  @Summary
-    Brief one-line description of the function.
-
-  @Description
-    Full description, explaining the purpose and usage of the function.
-    <p>
-    Additional description in consecutive paragraphs separated by HTML 
-    paragraph breaks, as necessary.
-    <p>
-    Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
-
-  @Precondition
-    List and describe any required preconditions. If there are no preconditions,
-    enter "None."
-
-  @Parameters
-    @param param1 Describe the first parameter to the function.
-    
-    @param param2 Describe the second parameter to the function.
-
-  @Returns
-    List (if feasible) and describe the return values of the function.
-    <ul>
-      <li>1   Indicates an error occurred
-      <li>0   Indicates an error did not occur
-    </ul>
-
-  @Remarks
-    Describe any special behavior not described above.
-    <p>
-    Any additional remarks.
-
-  @Example
-    @code
-    if(ExampleFunctionName(1, 2) == 0)
-    {
-        return 3;
-    }
- */
 
 
 /* ************************************************************************** */
@@ -108,15 +53,15 @@ static struct data_item_t *hash_array[TABLE_SIZE];
 
 /** 
   @Function
-    int ExampleInterfaceFunctionName ( int param1, int param2 ) 
+    void
+    convert_to_upper_case (char str[]) 
 
   @Summary
-    Brief one-line description of the function.
+    This function converts the passed in string to upper case.
 
   @Remarks
-    Refer to the example_file.h interface header for function usage details.
+    Refer to the morse_code.h interface header for function usage details.
  */
-/** This function converts the passed in string to upper case*/
 void
 convert_to_upper_case (char str[])
 {
@@ -128,7 +73,17 @@ convert_to_upper_case (char str[])
     }
 }
 
-/** This function sets up the morse code look up table **/
+/** 
+  @Function
+    void
+    setup_morse_code_table()
+
+  @Summary
+    This function sets up the morse code look up table.
+
+  @Remarks
+    Refer to the morse_code.h interface header for function usage details.
+ */
 void
 setup_morse_code_table()
 {
@@ -185,7 +140,18 @@ setup_morse_code_table()
     insert((int) ' ', " ", hash_array);
 }
 
-/** This function generates the morse code for the parsed in string **/
+/** 
+  @Function
+    void
+    encode(char str [], char code[][STRING_SIZE])
+
+  @Summary
+    This function generates the morse code for the parsed in string.
+
+  @Remarks
+    Refer to the morse_code.h interface header for function usage details.
+ */
+/**  **/
 void
 encode(char str [], char code[][STRING_SIZE])
 {

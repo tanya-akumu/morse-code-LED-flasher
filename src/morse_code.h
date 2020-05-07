@@ -15,50 +15,10 @@
  
  
  */
+#ifndef morse_code_H
+#define morse_code_H
 
 #define STRING_SIZE 8
-/* This section lists the other files that are included in this file.
- */
-
-    /* ************************************************************************** */
-    /* ************************************************************************** */
-    /* Section: Constants                                                         */
-    /* ************************************************************************** */
-    /* ************************************************************************** */
-
-    // *****************************************************************************
-    // *****************************************************************************
-    // Section: Data Types
-    // *****************************************************************************
-    // *****************************************************************************
-
-    /*  A brief description of a section can be given directly below the section
-        banner.
-     */
-
-
-    // *****************************************************************************
-
-    /** Descriptive Data Type Name
-
-      @Summary
-        Brief one-line summary of the data type.
-    
-      @Description
-        Full description, explaining the purpose and usage of the data type.
-        <p>
-        Additional description in consecutive paragraphs separated by HTML 
-        paragraph breaks, as necessary.
-        <p>
-        Type "JavaDoc" in the "How Do I?" IDE toolbar for more information on tags.
-
-      @Remarks
-        Any additional remarks
-        <p>
-        Describe enumeration elements and structure and union members above each 
-        element or member.
-     */
-
 
     // *****************************************************************************
     // *****************************************************************************
@@ -67,8 +27,8 @@
     // *****************************************************************************
 
 // *****************************************************************************
-    /**
-      @Function
+/**
+    @Function
         void
         convert_to_upper_case (char str[]);
       @Summary
@@ -115,15 +75,39 @@
     @Returns
        None
      */
-
     void
     setup_morse_code_table();
 
-/** This function generates the morse code for the parsed in string **/
+    // *****************************************************************************
+    /**
+      @Function
+        void
+        encode(char str [], char code[][STRING_SIZE]);
+     * 
+      @Summary
+        This function generates the morse code for the passed in string. 
+
+      @Description
+        This function sets up the morse code look up table and then generates 
+        the morse code for each character of the string and adds this to the 
+        passed in array of morse code strings. The generation is done by first 
+        searching for the character in the hash table and extracting its morse 
+        code value. This code is then copied as an element in the array of morse
+        codes for the string.
+
+      @Precondition
+        set up morse code look up table
+
+      @Parameters
+     None
+
+    @Returns
+       None
+     */
     void
     encode(char str [], char code[][STRING_SIZE]);
 
-
+#endif // morse_code_H
 /* *****************************************************************************
  End of File
  */
