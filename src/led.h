@@ -5,7 +5,7 @@
     led.h
 
   @Summary
-    Module to "flash" led.
+    Module to "flash" an led according to morse code signal.
 
   @Description
     This module configures the different functions to "flash" an LED (turn it
@@ -16,7 +16,7 @@
     dot length = configured as 1 second
     signal space length = one dot length
     dash length = 3 dot lengths
-    letter space lenght = 3 dot lengths
+    letter space length = 3 dot lengths
     word space length = 7 dot lengths
  */
 /* ************************************************************************** */
@@ -37,7 +37,8 @@ typedef enum { ON = 1, OFF = 0 } LED_state_t;
       @Description
         This is the delay function for microseconds. It converts the passed integer
         into clock ticks and waits until the core timer count reaches the clock 
-        ticks
+        ticks. Delay function was adapted from:
+        https://www.aidanmocke.com/blog/2018/04/10/delays/
       
       @Precondition
         System frequency set to 20 MHz
@@ -58,7 +59,8 @@ delay_us( unsigned int us);
       @Description
         This is the delay function for millisecond delay. It converts the passed
         integer into microseconds and then calls the delay_us() function to
-        implement the delay for this time.
+        implement the delay for this time.Delay function was adapted from:
+        https://www.aidanmocke.com/blog/2018/04/10/delays/
       
       @Precondition
         System frequency set to 20 MHz
@@ -72,6 +74,26 @@ delay_us( unsigned int us);
 void 
 delay_ms( unsigned int ms);
 
+/*
+ @Summary
+        Delay function.
+
+      @Description
+        This is the delay function. It delays by the passed in integer. Delay
+        function was adapted from:
+        MPLAB® XC32 User?s Guide for Embedded Engineers
+      
+      @Precondition
+        None
+
+      @Parameters
+        @param int time: The number of counts to delay by
+
+    @Returns
+        None 
+     */
+void 
+delay (int time);
 /*
  @Summary
         Turn the LED on to show dash signal in morse code.
