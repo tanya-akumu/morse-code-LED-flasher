@@ -24,9 +24,9 @@ void test_morse_code_NeedToImplement(void)
 
 void test_convert_to_uppercase(void)
 {
-    char word [STRING_SIZE] = "taNya";
+    char word [STRING_SIZE] = "abcdefghijklmnopqrstuvwxyz";
 	convert_to_upper_case (word);
-	TEST_ASSERT_EQUAL_STRING("TANYA", word);
+	TEST_ASSERT_EQUAL_STRING("ABCDEFGHIJKLMNOPQRSTUVWXYZ", word);
 }
 
 void test_encode(void)

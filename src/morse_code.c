@@ -38,7 +38,20 @@
  */
 static struct data_item_t *hash_array[TABLE_SIZE];
 
+/* ************************************************************************** */
+/* ************************************************************************** */
+// Section: Interface Functions                                               */
+/* ************************************************************************** */
+/* ************************************************************************** */
 
+static void reset_string(char str[])
+{
+    int loop;
+    for(loop = 0; loop < STRING_SIZE; loop++)
+    {
+        str[loop] = NULL;
+    }
+}
 /* ************************************************************************** */
 /* ************************************************************************** */
 // Section: Interface Functions                                               */
@@ -88,7 +101,7 @@ void
 setup_morse_code_table()
 {
     insert((int) 'A', ".-", hash_array);
-    insert((int) 'b', "-...", hash_array);
+    insert((int) 'B', "-...", hash_array);
     insert((int) 'C', "-.-.", hash_array);
     insert((int) 'D', "-..", hash_array);
     insert((int) 'E', ".", hash_array);
@@ -126,7 +139,7 @@ setup_morse_code_table()
     insert((int) '9', "----.", hash_array);
 
     insert((int) '.', ".?.?.?", hash_array);
-    insert((int) ',', ".?.?.?", hash_array);
+    insert((int) ',', " ?..??", hash_array);
     insert((int) '?', "..--..", hash_array);
     insert((int) '/', "-..-.", hash_array);
     insert((int) '(', "-.--.", hash_array);
@@ -165,12 +178,14 @@ encode(char str [], char code[][STRING_SIZE])
      
     for(counter = 0; str[counter] != '\0'; counter++)
     {
+        reset_string(temp);
         key = (int)str[counter];
         temp_t = search(key, hash_array);
         strcpy(temp,(temp_t->code));
         strcpy(code[counter], temp);
     }
 }
+
 
 /* *****************************************************************************
  End of File
