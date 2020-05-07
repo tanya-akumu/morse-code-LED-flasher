@@ -1,7 +1,35 @@
 /**
  * @file    main.c
- * @author  Plentify Hardware Team
+ * @author  Tanya Akumu
+ * 
  *
+ * @Description
+ *    This is the program solution for a Morse code LED flasher. The application
+ *    converts string of English characcters into its morse code equivalent and
+ *    then flashes the LED according to the morsecode symbol. The GPIO pin defined
+ *    to flash the LED is RA5. A look up table containing the key value pairs of
+ *    an character and its corresponding morse code is created using a hash table
+ *    ADT. The key is the character cast as an int and the value is the morse 
+ *    code stored as a string.
+ * 
+ *    Solution strategy:
+ *    ------------------
+ *    The algorithm for the application is as follows:
+ *    1. Set PORT A as output pins
+ *    2. Set the string of English character to convert
+ *    3. Get the length of this string
+ *    4. While the program is running:
+ *          - convert the string to upper case 
+ *          - encode the string and store the equivalent morse code signal in an
+ *            array of strings
+ *          - iterate over each symbol of the elements in the morse code array:
+ *              - if the symbol is a dash, flash the LED to show a dash
+ *              - if the symbol is a dot, flash the LED to show a dash
+ *              - if the symbol is a space, flash the LED to show a word space
+ *              - in each iteration, show letter space if more than one letter
+ *   
+ * 
+ * 
  */
  
 // PIC32MM0256GPM064 Configuration Bit Settings
@@ -63,14 +91,13 @@ int main(void)
     TRISAbits.TRISA5 = 0x00; //set RA5 to output pin
     
     // string of english text
-    //char message[] = "A4@ -N9";
     char message[] = "gr3@t fuN";
     
     // array of morse code signals for english test
     char message_in_morse [STRING_ARRAY_SIZE][STRING_SIZE];
     
+    //counter variables
     int word_counter,sym_counter;
-    
     int message_length = strlen(message);
     
     while (1)
@@ -88,7 +115,8 @@ int main(void)
             
             // copy morse code
             strcpy(temp,message_in_morse[word_counter]);
- 
+            
+            //flash led according to morse code symbol
             for(sym_counter = 0; temp[sym_counter] != NULL; sym_counter++)
             {
                 char morse_symbol = temp[sym_counter];
@@ -104,7 +132,6 @@ int main(void)
                 {
                     show_word_space();
                 }             
-      
             }
             show_letter_space();
         }
