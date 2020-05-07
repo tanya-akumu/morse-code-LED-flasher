@@ -71,7 +71,7 @@
     void 
     insert(int key, char data[STRING_SIZE], struct data_item_t *hash_array[TABLE_SIZE])
     {
-        struct data_item_t *item;
+        struct data_item_t *item = (struct data_item_t*) malloc(sizeof(struct data_item_t));
         strcpy(item->code,data);  
         item->key = key;
 
@@ -95,9 +95,9 @@
     struct
     data_item_t *delete_data_item(struct data_item_t* item, struct data_item_t *hash_array[TABLE_SIZE])
     {
-        struct data_item_t *dummy_item;
-        strcpy(dummyItem->code,"");  
-        dummyItem->key = -1; 
+        struct data_item_t *dummy_item = (struct data_item_t*) malloc(sizeof(struct data_item_t));
+        strcpy(dummy_item->code,"");  
+        dummy_item->key = -1; 
 
         int key = item->key;
 
