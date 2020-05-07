@@ -21,11 +21,8 @@
       <itemPath>src/morse_code.h</itemPath>
       <itemPath>src/hash_table.c</itemPath>
       <itemPath>src/hash_table.h</itemPath>
-<<<<<<< HEAD
-=======
       <itemPath>src/led.c</itemPath>
       <itemPath>src/led.h</itemPath>
->>>>>>> led_flasher_feature
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
