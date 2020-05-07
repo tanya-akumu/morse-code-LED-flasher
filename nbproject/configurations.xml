@@ -21,6 +21,11 @@
       <itemPath>src/morse_code.h</itemPath>
       <itemPath>src/hash_table.c</itemPath>
       <itemPath>src/hash_table.h</itemPath>
+<<<<<<< HEAD
+=======
+      <itemPath>src/led.c</itemPath>
+      <itemPath>src/led.h</itemPath>
+>>>>>>> led_flasher_feature
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -39,7 +44,7 @@
         <platformTool>Simulator</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.10</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="PIC32MM-GPM-0XX_DFP" vendor="Microchip" version="1.1.26"/>
