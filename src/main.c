@@ -63,7 +63,8 @@ int main(void)
     TRISAbits.TRISA5 = 0x00; //set RA5 to output pin
     
     // string of english text
-    char message[] = "1. ThIs w@s #fuN!";
+    //char message[] = "A4@ -N9";
+    char message[] = "gr3@t fuN";
     
     // array of morse code signals for english test
     char message_in_morse [STRING_ARRAY_SIZE][STRING_SIZE];
@@ -88,7 +89,7 @@ int main(void)
             // copy morse code
             strcpy(temp,message_in_morse[word_counter]);
  
-            for(sym_counter = 0; temp[sym_counter] != '0'; sym_counter++)
+            for(sym_counter = 0; temp[sym_counter] != NULL; sym_counter++)
             {
                 char morse_symbol = temp[sym_counter];
                 if (morse_symbol  == '-')
@@ -103,8 +104,9 @@ int main(void)
                 {
                     show_word_space();
                 }             
-                show_letter_space();
+      
             }
+            show_letter_space();
         }
     }
  
