@@ -23,7 +23,7 @@
 #ifndef led_H
 #define led_H
 
-#define SYS_FREQ 20000000 // Running at 20MHz
+#define SYS_FREQ 80000000 // Running at 80MHz
 #define LED_PIN  LATAbits.LATA5  //GPIO pin for LED
 
 /* on and off states for LED pin */

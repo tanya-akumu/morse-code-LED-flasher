@@ -121,9 +121,9 @@ show_signal_space()
 {
     int space_length = dot_length;
     LED_PIN = OFF;
-    delay_ms(space_length);
-}
 
+    delay(space_length * 100);
+}
 
 /** 
   @Function
@@ -140,7 +140,10 @@ show_letter_space()
 {
     int letter_space_length = dot_length * 3;
     LED_PIN = OFF;
-    delay_ms(letter_space_length);
+
+
+    delay(letter_space_length * 100);
+
 }
 
 
@@ -159,7 +162,7 @@ show_word_space()
 {
     int word_space_length = dot_length * 7;
     LED_PIN = OFF;
-    delay_ms(word_space_length);
+    delay(word_space_length * 100);
 }
 
 
@@ -179,7 +182,7 @@ show_dash()
     int dash_length = dot_length * 3;
     
     LED_PIN = ON;
-    delay_ms(dash_length);
+    delay(dash_length * 100);
     show_signal_space();
 }
 
@@ -197,7 +200,8 @@ void
 show_dot()
 {
     LED_PIN = ON;
-    delay_ms(dot_length);
+    delay(dot_length * 100);
+
     show_signal_space();
 }
 
